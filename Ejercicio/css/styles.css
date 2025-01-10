@@ -1,0 +1,234 @@
+body {
+  background-image: url('https://img.freepik.com/fotos-premium/fondo-sencillo-elegante_1085074-45132.jpg');
+  background-size: cover; 
+  background-position: center center; 
+  background-attachment: fixed; 
+  background-repeat: no-repeat; 
+  font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.header {
+  background-color: #b0885ea1;
+  color: rgb(59, 36, 6);
+  padding: 5px;
+  text-align: center;
+}
+
+ h1 {
+  font-size: 40px;
+  color: #794618
+  ;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  color: #794618;
+}
+
+.welcome-section {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.welcome-section h2 {
+  font-size: 35px;
+  color: #794618;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(59, 32, 2, 0.1);
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  font-size: 1.5rem;
+  color: #330303;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #533827;
+  margin-bottom: 20px;
+}
+
+.card-button {
+  text-decoration: none;
+  background-color: #d6b98a;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+  background-color: #54331b;
+  
+}
+
+button {
+  background-color: #bd7f53;
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-color: #bd7f53;
+  font-weight: bold;
+}
+
+select {
+  width: 20%; 
+  padding: 10px; 
+  font-size: 14px; 
+  color: #0b0b0b; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  outline: none; 
+  transition: all 0.3s ease; 
+}
+
+select:hover {
+  background-color: #e6e6e6; 
+  border-color: #aaa; 
+}
+
+select:focus {
+  border-color: #c86d38; 
+  box-shadow: 0 0 4px rgba(147, 105, 68, 0.5); 
+}
+
+
+.filters {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap; 
+  margin-bottom: 20px;
+  justify-content: space-between; 
+}
+
+#contracts-table {
+  width: 100%;
+  border-collapse: collapse; 
+  margin-top: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; 
+  font-size: 14px;
+}
+
+#contracts-table thead {
+  background-color: #b04a10b0; 
+  color: #fff;
+  text-align: left;
+}
+
+#contracts-table th,
+#contracts-table td {
+  padding: 12px 15px;
+  text-align: center; 
+  border-bottom: 1px solid #ddd;
+}
+
+#contracts-table th {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+#search {
+  width: 20%; 
+  padding: 10px; 
+  font-size: 14px; 
+  color: #0b0b0b; 
+  background-color: #f9f9f9; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+}
+
+
+.contract-form {
+  width: 100%;
+  max-width: 580px; 
+  margin: 20px auto; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: #6c3305;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="date"]
+ {
+  height: 35px;
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #bd7f53;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #79310d;
+}
+

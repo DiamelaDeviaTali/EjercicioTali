@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Listado de Contratos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Contratos</h1>
+        <div class="filters">
+            <input type="text" id="search" placeholder="Buscar contrato..." />
+            <select id="unidad_negocio">
+                <option value="">Unidad de Negocio</option>
+            </select>
+            <select id="tipo_contrato">
+                <option value="">Tipo de Contrato</option>
+            </select>
+            <button type="button" onclick="window.location.href = 'crear.html';">Nuevo Contrato</button>
+        </div>
+        <table id="contracts-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Tipo</th>
+                    <th>Unidad</th>
+                    <th>Cliente</th>
+                    <th>Manager</th>
+                    <th>Fecha Inicio</th>
+                    <th>Fecha Fin</th>
+                    <th>Modificar</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script type="module" src="../js/listContract.js"></script>
+    <script type="module" src="../js/deleteContract.js"></script>
+</body>
+</html>
