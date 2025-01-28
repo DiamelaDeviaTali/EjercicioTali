@@ -83,22 +83,22 @@ function cargarTabla(contratos) {
     contratos.forEach(contrato => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${contrato.id || ''}</td>
-            <td>${contrato.nombre || ''}</td>
-            <td>${contrato.tipo_contrato || ''}</td>
-            <td>${contrato.unidad_negocio || ''}</td>
-            <td>${contrato.cliente || ''}</td>
-            <td>${contrato.manager || ''}</td>
-            <td>${contrato.fecha_inicio || ''}</td>
-            <td>${contrato.fecha_fin || ''}</td>
+            <td data-label>${contrato.id || ''}</td>
+            <td data-label>${contrato.nombre || ''}</td>
+            <td data-label>${contrato.tipo_contrato || ''}</td>
+            <td data-label>${contrato.unidad_negocio || ''}</td>
+            <td data-label>${contrato.cliente || ''}</td>
+            <td data-label>${contrato.manager || ''}</td>
+            <td data-label>${contrato.fecha_inicio || ''}</td>
+            <td data-label>${contrato.fecha_fin || ''}</td>
              <td>
                 <a href="modificar.html?id=${contrato.id}" class="icon-link">
-                    <img src="https://www.iconbolt.com/iconsets/akar-icons/edit.svg" alt="Editar" class="action-icon">
+                    <img src="../Ejercicio/img/edit.svg" alt="Editar" class="action-icon">
                 </a>
             </td>
             <td>
                 <a href="#" onclick="borrarContrato(${contrato.id}); return false;" class="icon-link">
-                    <img src="https://www.iconbolt.com/iconsets/akar-icons/trash-can.svg" alt="Eliminar" class="action-icon">
+                    <img src="../Ejercicio/img/trash.svg" alt="Eliminar" class="action-icon">
                 </a>
             </td>
         `;

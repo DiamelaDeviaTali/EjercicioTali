@@ -1,5 +1,5 @@
 body {
-  background-image: url('https://img.freepik.com/fotos-premium/fondo-sencillo-elegante_1085074-45132.jpg');
+  background-image: url('../img/fondo.jpg');
   background-size: cover; 
   background-position: center center; 
   background-attachment: fixed; 
@@ -14,15 +14,14 @@ body {
 }
 
 .header {
-  background-color: #b0885ea1;
-  color: rgb(59, 36, 6);
+  background-color: rgba(255, 247, 234, 0.788);
   padding: 5px;
   text-align: center;
 }
 
  h1 {
   font-size: 40px;
-  color: #794618
+  color: #b15e16
   ;
 }
 
@@ -30,7 +29,7 @@ h2 {
   text-align: center;
   margin-top: 20px;
   font-size: 30px;
-  color: #794618;
+  color: #dd761c;
 }
 
 .welcome-section {
@@ -40,7 +39,7 @@ h2 {
 
 .welcome-section h2 {
   font-size: 35px;
-  color: #794618;
+  color: #e67b1d;
 }
 
 .cards-container {
@@ -51,7 +50,7 @@ h2 {
 }
 
 .card {
-  background-color: white;
+  background-color: rgb(255, 247, 234);
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(59, 32, 2, 0.1);
   padding: 20px;
@@ -72,7 +71,7 @@ h2 {
 
 .card h3 {
   font-size: 1.5rem;
-  color: #330303;
+  color: #000000;
   margin-bottom: 10px;
 }
 
@@ -84,7 +83,7 @@ h2 {
 
 .card-button {
   text-decoration: none;
-  background-color: #d6b98a;
+  background-color: #3291c9;
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
@@ -93,17 +92,17 @@ h2 {
 }
 
 .card-button:hover {
-  background-color: #54331b;
+  background-color: #024bb8;
   
 }
 
 button {
-  background-color: #bd7f53;
+  background-color: #3291c9;
   text-decoration: none;
   color: white;
   padding: 10px 20px;
   border-radius: 10px;
-  border-color: #bd7f53;
+  border-color: #034972;
   font-weight: bold;
   cursor: pointer;
 }
@@ -152,7 +151,7 @@ select:focus {
 }
 
 #contracts-table thead {
-  background-color: #b04a10b0; 
+  background-color: #fc5e02d3; 
   color: #fff;
   text-align: left;
 }
@@ -199,7 +198,7 @@ select:focus {
 label {
   display: block;
   font-size: 14px;
-  color: #6c3305;
+  color: #f37610;
   margin-bottom: 5px;
   font-weight: bold;
 }
@@ -222,7 +221,7 @@ button[type="submit"] {
   padding: 12px;
   font-size: 16px;
   color: #ffffff;
-  background-color: #bd7f53;
+  background-color: #f37f2c;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -230,6 +229,117 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #79310d;
+  background-color: #ac4613;
 }
 
+@media (max-width: 1024px) {
+  .container {
+      max-width: 95%;
+      padding: 15px;
+  }
+
+  .filters {
+      gap: 15px;
+  }
+
+  select, #search {
+      width: 30%; 
+  }
+
+  #contracts-table {
+      font-size: 13px;
+  }
+
+  #contracts-table th,
+  #contracts-table td {
+      padding: 10px 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .filters {
+      flex-direction: column;
+      gap: 10px;
+  }
+
+  select, #search {
+      width: 100%; 
+  }
+
+  #contracts-table {
+      font-size: 12px;
+  }
+
+  #contracts-table thead {
+      display: none; 
+  }
+
+  #contracts-table, 
+  #contracts-table tbody, 
+  #contracts-table tr, 
+  #contracts-table td {
+      display: block;
+      width: 100%;
+  }
+
+  #contracts-table tr {
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+  }
+
+  #contracts-table td {
+      text-align: left;
+      padding: 8px;
+      position: relative;
+      padding-left: 50%;
+      border-bottom: 1px solid #eee;
+  }
+
+  #contracts-table td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 8px;
+      width: 45%;
+      font-weight: bold;
+      text-align: left;
+      color: #fc5e02d3;
+  }
+
+  .contract-form {
+      padding: 15px;
+  }
+
+  .form-group {
+      margin-bottom: 15px;
+  }
+
+  input[type="text"],
+  input[type="date"] {
+      padding: 8px;
+  }
+
+  h1 {
+      font-size: 28px;
+  }
+
+  h2 {
+      font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 10px;
+  }
+
+  button {
+      width: 100%;
+      margin-top: 10px;
+  }
+
+  .card {
+      width: 100%;
+  }
+}

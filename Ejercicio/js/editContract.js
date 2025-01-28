@@ -67,12 +67,18 @@ function sendDataContrato() {
                 throw new Error(`Error en la actualización: ${response.status}`);
             }
 
-            alert('Contrato actualizado exitosamente');
-            window.location.href = 'listado.html';
+            await Swal.fire({
+                icon: 'success',
+                text: 'Contrato actualizado exitosamente'
+            });
+            window.location.href = 'listContract.html';
 
         } catch (error) {
             console.error('Error al actualizar:', error);
-            alert('Error al actualizar el contrato: ' + error.message);
+            Swal.fire({
+                icon: 'error',
+                text: 'Error al actualizar el contrato: ' + error.message
+            });
         }
     });
 }

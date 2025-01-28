@@ -45,7 +45,12 @@ function enviarContrato(event) {
 
     addContract(contractData)
         .then(() => {
-            alert('Contrato agregado exitosamente');
+            Swal.fire({
+                icon: 'success',
+                text: 'Contrato agregado exitosamente'
+            }).then(() => {
+                window.location.href = 'listado.html';
+            });
             event.target.reset();
             if (typeof window.loadContracts === 'function') {
                 window.loadContracts();
@@ -53,7 +58,10 @@ function enviarContrato(event) {
         })
         .catch(error => {
             console.error('Error completo:', error);
-            alert('Error al agregar el contrato: ' + error.message);
+            Swal.fire({
+                icon: 'error',
+                text: 'Error al agregar el contrato: ' + error.message
+            });
         });
 }
 
