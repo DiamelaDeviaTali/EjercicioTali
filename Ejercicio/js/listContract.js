@@ -92,13 +92,13 @@ function cargarTabla(contratos) {
             <td data-label>${contrato.fecha_inicio || ''}</td>
             <td data-label>${contrato.fecha_fin || ''}</td>
              <td>
-                <a href="modificar.html?id=${contrato.id}" class="icon-link">
-                    <img src="../Ejercicio/img/edit.svg" alt="Editar" class="action-icon">
+                <a href="editContract.html?id=${contrato.id}" class="icon-link">
+                    <img src="../img/edit.svg" alt="Editar" class="action-icon">
                 </a>
             </td>
             <td>
                 <a href="#" onclick="borrarContrato(${contrato.id}); return false;" class="icon-link">
-                    <img src="../Ejercicio/img/trash.svg" alt="Eliminar" class="action-icon">
+                    <img src="../img/trash.svg" alt="Eliminar" class="action-icon">
                 </a>
             </td>
         `;

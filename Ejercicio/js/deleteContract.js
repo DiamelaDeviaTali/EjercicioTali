@@ -2,7 +2,18 @@ import CONFIG from './config.js';
 import { cargarDataContratos } from './listContract.js';
 
 window.borrarContrato = async function(contractId) {
-    if (!confirm('¿Está seguro que desea eliminar este contrato?')) {
+    const result = await Swal.fire({
+        title: '¿Está seguro?',
+        text: "¿Desea eliminar este contrato?",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    });
+
+    if (!result.isConfirmed) {
         return;
     }
 
@@ -17,10 +28,23 @@ window.borrarContrato = async function(contractId) {
         }
         
         await cargarDataContratos();
-        alert('Contrato eliminado exitosamente');
+        
+        await Swal.fire({
+            title: '¡Eliminado!',
+            text: 'El contrato ha sido eliminado exitosamente',
+            icon: 'success',
+            timer: 2000,
+            showConfirmButton: false
+        });
 
     } catch (error) {
         console.error('Error al eliminar el contrato:', error);
-        alert('Error al eliminar el contrato. Por favor, intente nuevamente.');
+        
+        await Swal.fire({
+            title: 'Error',
+            text: 'Error al eliminar el contrato. Por favor, intente nuevamente.',
+            icon: 'error',
+            confirmButtonText: 'Aceptar'
+        });
     }
 }

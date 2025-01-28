@@ -49,7 +49,7 @@ function enviarContrato(event) {
                 icon: 'success',
                 text: 'Contrato agregado exitosamente'
             }).then(() => {
-                window.location.href = 'listado.html';
+                window.location.href = 'listContract.html';
             });
             event.target.reset();
             if (typeof window.loadContracts === 'function') {

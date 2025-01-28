@@ -143,8 +143,8 @@ select:focus {
   width: 100%;
   border-collapse: collapse; 
   margin-top: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #fff6eb;
+  border: 1px solid #fff6eb;
   border-radius: 8px;
   overflow: hidden; 
   font-size: 14px;
@@ -160,7 +160,7 @@ select:focus {
 #contracts-table td {
   padding: 12px 15px;
   text-align: center; 
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #b4afaf;
 }
 
 #contracts-table th {
