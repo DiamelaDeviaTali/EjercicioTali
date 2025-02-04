@@ -2,7 +2,6 @@ import CONFIG from './config.js';
 
 async function cargarDataContratos() {
     try {
-        
         const response = await fetch(CONFIG.apiUrl, {
             method: 'GET',
             headers: CONFIG.headers()
@@ -46,31 +45,30 @@ function cargarFiltros(contratos) {
         selectTipo.appendChild(option);
     });
 
-    selectUnidad.addEventListener('change', () => aplicarFiltros(contratos));
-    selectTipo.addEventListener('change', () => aplicarFiltros(contratos));
-    document.getElementById('search').addEventListener('input', () => aplicarFiltros(contratos));
-}
+    $.fn.dataTable.ext.search.push(function(settings, data) {
+        const unidadSeleccionada = $('#unidad_negocio').val();
+        const tipoSeleccionado = $('#tipo_contrato').val();
 
-function aplicarFiltros(contratos) {
-    const unidadSeleccionada = document.getElementById('unidad_negocio').value;
-    const tipoSeleccionado = document.getElementById('tipo_contrato').value;
-    const busqueda = document.getElementById('search').value.toLowerCase();
+        const unidad = data[3] || '';
+        const tipo = data[2] || '';
 
-    const contratosFiltrados = contratos.filter(contrato => {
-        const coincideUnidad = !unidadSeleccionada || contrato.unidad_negocio === unidadSeleccionada;
-        const coincideTipo = !tipoSeleccionado || contrato.tipo_contrato === tipoSeleccionado;
-        const coincideBusqueda = !busqueda || 
-            Object.values(contrato).some(valor => 
-                String(valor).toLowerCase().includes(busqueda)
-            );
+        const coincideUnidad = !unidadSeleccionada || unidad === unidadSeleccionada;
+        const coincideTipo = !tipoSeleccionado || tipo === tipoSeleccionado;
 
-        return coincideUnidad && coincideTipo && coincideBusqueda;
+        return coincideUnidad && coincideTipo;
     });
 
-    cargarTabla(contratosFiltrados);
+    selectUnidad.addEventListener('change', () => dataTable.draw());
+    selectTipo.addEventListener('change', () => dataTable.draw());
 }
 
+let dataTable;
+
 function cargarTabla(contratos) {
+    if ($.fn.DataTable.isDataTable('#contracts-table')) {
+        $('#contracts-table').DataTable().destroy();
+    }
+
     const tbody = document.querySelector('#contracts-table tbody');
     
     if (!tbody) {
@@ -91,7 +89,7 @@ function cargarTabla(contratos) {
             <td data-label>${contrato.manager || ''}</td>
             <td data-label>${contrato.fecha_inicio || ''}</td>
             <td data-label>${contrato.fecha_fin || ''}</td>
-             <td>
+            <td>
                 <a href="editContract.html?id=${contrato.id}" class="icon-link">
                     <img src="../img/edit.svg" alt="Editar" class="action-icon">
                 </a>
@@ -105,8 +103,30 @@ function cargarTabla(contratos) {
         
         tbody.appendChild(row);
     });
+
+    dataTable = $('#contracts-table').DataTable({
+        responsive: true,
+        pageLength: 10,
+        dom: '<"custom-search">frtip',
+        lengthChange: false,
+        language: {
+            search: "",
+            searchPlaceholder: "Buscar..."
+        },
+        columnDefs: [
+            { 
+                targets: [-1, -2], 
+                orderable: false,  
+                searchable: false
+            }
+        ], 
+        initComplete: function() {
+            
+            $('.dataTables_filter').appendTo('#custom-search-container');
+        }
+    });
 }
 
 document.addEventListener('DOMContentLoaded', cargarDataContratos);
 
-export { cargarDataContratos, cargarTabla, cargarFiltros, aplicarFiltros };
+export { cargarDataContratos, cargarTabla, cargarFiltros };

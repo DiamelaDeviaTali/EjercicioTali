@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.1/js/dataTables.min.js"></script>
     <title>Listado de Contratos</title>
 </head>
 <body>
@@ -12,7 +15,7 @@
         <button type="button" onclick="history.back()" class="back-button">Volver</button>
         <h1>Contratos</h1>
         <div class="filters">
-            <input type="text" id="search" placeholder="Buscar contrato..." />
+            <div id="custom-search-container"></div>
             <select id="unidad_negocio">
                 <option value="">Unidad de Negocio</option>
             </select>
