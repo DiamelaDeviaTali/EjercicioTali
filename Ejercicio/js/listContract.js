@@ -109,6 +109,8 @@ function cargarTabla(contratos) {
         pageLength: 10,
         dom: '<"custom-search">frtip',
         lengthChange: false,
+        info: "",
+        infoEmpty: "",
         language: {
             search: "",
             searchPlaceholder: "Buscar..."
@@ -119,11 +121,7 @@ function cargarTabla(contratos) {
                 orderable: false,  
                 searchable: false
             }
-        ], 
-        initComplete: function() {
-            
-            $('.dataTables_filter').appendTo('#custom-search-container');
-        }
+        ]
     });
 }
 

@@ -7,7 +7,7 @@ window.borrarContrato = async function(contractId) {
         text: "¿Desea eliminar este contrato?",
         icon: 'warning',
         showCancelButton: true,
-        confirmButtonColor: '#3085d6',
+        confirmButtonColor: '#6098d4',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Sí, eliminar',
         cancelButtonText: 'Cancelar'

@@ -14,7 +14,8 @@ body {
 }
 
 .header {
-  background-color: rgba(242, 238, 231, 0.788);
+  background-color: rgba(255, 255, 255, 0.856);
+  border-radius: 10px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
@@ -34,7 +35,7 @@ body {
 
  h1 {
   font-size: 40px;
-  color: #b15e16;
+  color: #ff7700;
   margin-top: 5px;
   margin-bottom: 5px;
 }
@@ -44,7 +45,7 @@ h2 {
   margin-top: 5px;
   font-size: 30px;
   margin-bottom: 5px;
-  color: #dd761c;
+  color: #E1A723;
 }
 
 .welcome-section {
@@ -67,7 +68,7 @@ h2 {
 .card {
   background-color: rgb(255, 247, 234);
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(59, 32, 2, 0.1);
+  box-shadow: 0 5px 6px rgba(63, 41, 15, 0.1);
   padding: 20px;
   width: 260px;
   text-align: center;
@@ -92,14 +93,14 @@ h2 {
 
 .card p {
   font-size: 1rem;
-  color: #533827;
+  color: #645246;
   margin-bottom: 20px;
 }
 
 .card-button {
   text-decoration: none;
-  background-color: #3291c9;
-  color: white;
+  background-color: #69a6ca;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 10px;
   font-weight: bold;
@@ -107,17 +108,17 @@ h2 {
 }
 
 .card-button:hover {
-  background-color: #024bb8;
+  background-color: #1c5f86;
   
 }
 
 button {
-  background-color: #3291c9;
+  background-color: #69a6ca;
   text-decoration: none;
-  color: white;
+  color: rgb(255, 255, 255);
   padding: 10px 20px;
   border-radius: 10px;
-  border-color: #034972;
+  border-color: #8fb9cf;
   font-weight: bold;
   cursor: pointer;
 }
@@ -126,7 +127,7 @@ select {
   width: 20%; 
   padding: 10px; 
   font-size: 14px; 
-  color: #0b0b0b; 
+  color: #000000; 
   background-color: #f9f9f9; 
   border: 1px solid #ccc;
   border-radius: 8px; 
@@ -140,18 +141,12 @@ select:hover {
   border-color: #aaa; 
 }
 
-select:focus {
-  border-color: #c86d38; 
-  box-shadow: 0 0 4px rgba(147, 105, 68, 0.5); 
-}
-
-
 .filters {
   display: flex;
   align-items: center;
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: flex-start; 
+  justify-content: flex-end; 
 }
 
 
@@ -167,7 +162,7 @@ select:focus {
 }
 
 #contracts-table thead {
-  background-color: #fc5e02d3; 
+  background-color: #ff5e00; 
   color: #fff;
   text-align: left;
 }
@@ -244,12 +239,33 @@ button[type="submit"]:hover {
   margin-bottom: 1rem;
 }
 
-#custom-search-container .dataTables_filter {
-  margin: 0;
+.dt-search-0 {
+  background-color: white;
 }
 
-#custom-search-container .dataTables_filter input {
-  margin-left: 0;
+.dt-paging-button {
+  background-color: #dfe7ee ;
+  border: 1px solid #ddd ;
+  padding: 6px 12px ;
+  margin: 0 2px ;
+  border-radius: 4px ;
+  color: #333 ;
+}
+
+.dt-paging-button.current {
+  background-color: #6098d4 ;
+  color: white ;
+  border-color: #5583b8 ;
+}
+
+.dt-paging-button.disabled {
+  opacity: 0.5 ;
+  cursor: not-allowed ;
+}
+
+.dt-paging-button:hover:not(.disabled) {
+  background-color: #204163 ;
+  border-color: #0d263f ;
 }
 
 @media (max-width: 1024px) {
